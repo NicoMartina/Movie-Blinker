@@ -76,16 +76,21 @@ element.style {
 NAV BAR
 
 */
+@media screen and (max-height: 800px) {
+	.building {
+		height: 40vh;
+	}
+}
 @media screen and (max-height: 1200px) {
 	.navbar {
 		height: 100px;
 	}
-}
-
-@media screen and (max-height: 1200px) {
 	#landing-page {
 		max-height: none;
 		margin-bottom: 40px;
+	}
+	h1 {
+		font-size: 50px;
 	}
 }
 
@@ -96,6 +101,10 @@ NAV BAR
 	padding: 0 50px;
 	font-size: 18px;
 	font-weight: 600;
+}
+
+.logo {
+	transition: all 0.15s ease;
 }
 
 .navbar .logo {
@@ -117,6 +126,13 @@ NAV BAR
 	max-width: 1200px;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.content-wrapper-movies {
+	align-items: center;
+	flex-direction: column;
+	margin-top: -20;
+	z-index: 2;
 }
 
 .navbar .links {
@@ -258,27 +274,6 @@ input {
 	padding-left: 25px;
 }
 
-button.loading {
-	background-color: #0a1f44;
-	cursor: no-drop;
-}
-
-button.loading[data-v-2a11e7ca]:hover {
-	background-color: #000;
-}
-
-button.not-loading {
-	border: 1px solid #6030b1;
-	background-color: #6030b1;
-	box-shadow: 7px 7px 14px rgb(134 93 204 / 30%);
-	cursor: pointer;
-}
-
-button.not-loading:hover {
-	background-color: #ff328f;
-	border: 1px solid #ff328f;
-}
-
 button {
 	width: 200px;
 	margin-left: 20px;
@@ -288,7 +283,32 @@ button {
 	transition: all 0.25s ease;
 }
 
-svg:not(:root).svg-inline--fa {
+button:focus {
+	outline: none;
+}
+
+.not-loading {
+	border: 1px solid #6030b1;
+	background-color: #6030b1;
+	box-shadow: 7px 7px 14px rgb(134 93 204 / 30%);
+	cursor: pointer;
+}
+
+.not-loading:hover {
+	background-color: #ff328f;
+	border: 1px solid #ff328f;
+}
+
+.loading {
+	background-color: #0a1f44;
+	cursor: no-drop;
+}
+
+.loading:hover {
+	background-color: #000;
+}
+
+svg:not(:root) .svg-inline--fa {
 	overflow: visible;
 }
 
@@ -302,6 +322,11 @@ svg:not(:root).svg-inline--fa {
 	height: 1em;
 	overflow: visible;
 	vertical-align: -0.125em;
+}
+
+.fa-spinner[data-v-cf78a876] {
+	-webkit-animation: rotate-data-v-cf78a876 1s linear infinite;
+	animation: rotate-data-v-cf78a876 1s linear infinite;
 }
 :not(svg) {
 	transform-origin: 0px 0px;
