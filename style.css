@@ -208,30 +208,42 @@ a.btn-contact:hover {
 	position: relative;
 }
 
-.bento-menu {
-	width: 27px;
-	height: 27px;
+nav {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
-	box-sizing: content-box;
-	padding: 5px;
+}
+
+nav .mainMenu {
+	display: flex;
+	list-style: none;
+}
+
+nav .mainMenu li a {
+	display: inline-block;
+	padding: 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #6030b1;
+}
+
+nav .mainMenu li a:hover {
+	color: #ff328f;
+}
+nav .openMenu {
+	font-size: 2rem;
+	margin: 20px;
+	display: none;
 	cursor: pointer;
 }
 
-.hide-anim-out {
-	-webkit-animation: rotateToZero-data-v-48b363cf 0.3s;
-	animation: rotateToZero-data-v-48b363cf 0.3s;
-	opacity: 0;
-	border-radius: 50%;
+nav .mainMenu .closeMenu {
+	font-size: 2rem;
+	display: none;
+	cursor: pointer;
 }
+*/
 
-.bento-menu > div {
-	width: 7px;
-	height: 7px;
-	border-radius: 50%;
-	background-color: #6030b1;
-}
+
 /* 
 
 LANDING PAGE
@@ -314,4 +326,58 @@ svg:not(:root).svg-inline--fa {
 	bottom: 80px;
 	height: 50vh;
 	position: absolute;
+}
+
+/* 
+
+
+ADDED CSS
+
+
+*/
+
+.navbar .openMenu {
+	font-size: 2rem;
+	margin: 20px;
+	display: none;
+	cursor: pointer;
+}
+
+.navbar .mainMenu .closeMenu {
+	font-size: 2rem;
+	display: none;
+	cursor: pointer;
+}
+
+@media (max-width: 800px) {
+	.mainMenu {
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 0;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: #fff;
+		transition: top 1s ease;
+		display: none;
+	}
+
+	.navbar .mainMenu .closeMenu {
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+	.navbar .openMenu {
+		display: block;
+	}
+
+	.navbar .mainMenu li a:hover {
+		background: none;
+		color: #6030b1;
+		font-size: 1.6rem;
+	}
 }
